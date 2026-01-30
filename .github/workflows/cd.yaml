@@ -3,13 +3,14 @@ on:
   push:
     branches: [ main ]
 
-permissions:
-  contents: read
-  packages: write
-
+env:
+    IMAGE_NAME: ghcr.io/william7865/projetdevsecops:latest
 jobs:
   docker:
     runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        packages: write
 
     steps:
       - uses: actions/checkout@v4
